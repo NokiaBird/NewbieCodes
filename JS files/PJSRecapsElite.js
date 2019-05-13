@@ -85,16 +85,30 @@ var todoList = {
 //From here starts linking our JS scripts to HTML for user interface
 //===================================================================
 
-//1.We want to get access to the display todos button.
-var displayTodosbutton = document.getElementById('displayTodosButton');
-//2.We want to run displayTodos method, when someone clicks the displayTodos button.
-displayTodosbutton.addEventListener('click', function() {
-	todoList.displayTodos();
-});
+//THIS CODE HAS BEEN REFACTORED FOR EASY READING & UNDERSTANDING
 
-//1.We want to get access to the toggleAll button.
-var toggleAllButton = document.getElementById('toggleAllButton');
-//2.We want to run displayTodos method, when someone clicks the toggleAll button.
-toggleAllButton.addEventListener('click', function() {
-	todoList.toggleAll();
-});
+// //1.We want to get access to the display todos button.
+// var displayTodosbutton = document.getElementById('displayTodosButton');
+// //2.We want to run displayTodos method, when someone clicks the displayTodos button.
+// displayTodosbutton.addEventListener('click', function() {
+// 	todoList.displayTodos();
+// });
+
+// //1.We want to get access to the toggleAll button.
+// var toggleAllButton = document.getElementById('toggleAllButton');
+// //2.We want to run displayTodos method, when someone clicks the toggleAll button.
+// toggleAllButton.addEventListener('click', function() {
+// 	todoList.toggleAll();
+// });
+
+//HERE IS THE REFACTORED CODE OF THE ABOVE ONE
+var handlers = {
+	//Here goes the displayTodos method
+	displayTodos: function() {
+		todoList.displayTodos();
+	},
+	//Here goes the toggleAll method
+	toggleAll: function() {
+		todoList.toggleAll();
+	}
+};
