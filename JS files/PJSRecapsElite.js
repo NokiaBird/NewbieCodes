@@ -103,12 +103,18 @@ var todoList = {
 
 //HERE IS THE REFACTORED CODE OF THE ABOVE ONE
 var handlers = {
-	//Here goes the displayTodos method
+	//Here goes the displayTodos button
 	displayTodos: function() {
 		todoList.displayTodos();
 	},
-	//Here goes the toggleAll method
+	//Here goes the toggleAll button
 	toggleAll: function() {
 		todoList.toggleAll();
+	},
+
+	//Here goes the addTodo button
+	addTodo: function() {
+		var addTodoTextInput = document.getElementById('addTodoTextInput');
+		todoList.addTodo(addTodoTextInput.value);
 	}
 };
