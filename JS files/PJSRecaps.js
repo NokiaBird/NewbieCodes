@@ -1,172 +1,51 @@
 //PJS RECAPS
-//*** V1 ======ARRAYS====== ****//
-//============
-var todos = [ 'item 1', 'item 2', 'item 3' ];
-//To display Todos
-//================
-console.log('My Todos:', todos);
+//REVISION
+//========================================
+//***** CODE HEREEEEE *****//
 
-//To add new Todos
-//================
-todos.push(todo);
+//displayTodos Method
+//========================
 
-//To change a Todo
+//addTodo Method
+//=================
+
+//changeTodo Method
 //==================
-todos[position] = newvalue;
 
-//To delete a Todo
-//================
-todos.splice(position, 1);
+//deleteTodo function
+//===================
 
-//PJS RECAPS
-//*** V2 ======FUNCTIONS====== ****//
-//============
+//toggleCompletedMethod
+//======================
 
-//It should have a function to display todos
-function displayTodos() {
-	console.log('My Todos:', todos);
-}
+//toggleAll Method
+//=================
 
-//It should have a function to add  a todo
-function addTodo(todo) {
-	todos.push(todo);
-	displayTodos();
-}
+//Get number of completed todos.
 
-//It should have a function to change todos
-function changeTodo(position, newvalue) {
-	todos[position] = newValue;
-	displayTodos();
-}
+//if everything's true, make everything false.
 
-//It should have a function to delete a todo
-function deleteTodo(position) {
-	todos.splice(position, 1);
-	displayTodos();
-}
+//make everything false.
 
-//PJS RECAPS
-//*** V3 ======OBJECTS====== ****//
-//============
+//Otherwise make everything trueee.
 
-var todoList = {
-	todos: [ 'item 1', 'item 2', 'item 3' ],
-	//displayTodos Method
-	displayTodos: function() {
-		console.log('My Todos:', this.todos);
-	},
+//From here starts linking our JS scripts to HTML for user interface
+//===================================================================
 
-	//addTodos Method
-	addTodo: function(todo) {
-		this.todos.push(todo);
-		this.displayTodos();
-	},
+//THIS CODE HAS BEEN REFACTORED FOR EASY READING & UNDERSTANDING.
 
-	//changeTodo Method
-	changeTodo: function(position, newValue) {
-		this.todos[position] = newValue;
-		this.displayTodos();
-	},
+//1.We want to get access to the display todos button.
 
-	//deleteTodo Method
-	deleteTodo: function(position) {
-		this.todos.splice(position, 1);
-		this.displayTodos();
-	}
-};
+//2.We want to run displayTodos method, when someone clicks the displayTodos button.
 
-//PJS RECAPS
-//*** V4 ======BOOLEANS====== ****//
-//============
-//addTodo should add objects
-var todoList = {
-	todos: [],
+//1.We want to get access to the toggleAll button.
 
-	//displayTodos Method
-	displayTodos: function() {
-		console.log('My Todos:', this.todos);
-	},
-	//addTodo should add objects
-	addTodo: function(todoText) {
-		this.todos.push({
-			todoText: todoText,
-			completed: false
-		});
-		this.displayTodos();
-	},
+//2.We want to run displayTodos method, when someone clicks the toggleAll button.
 
-	//changeTodo should change todoText
-	changeTodo: function(position, todoText) {
-		this.todos[position].todoText = todoText;
-		this.displayTodos();
-	},
+//HERE IS THE REFACTORED CODE OF THE ABOVE ONE.
 
-	//tooggleCompleted tells wether todo is completed or not
-	toggleCompleted: function(position) {
-		var todo = this.todos[position];
-		todo.completed = !todo.completed;
-		this.displayTodos();
-	}
-};
+//Here goes the displayTodos button.
 
-//PJS RECAPS
-//*** V5 ======LOOPS OF LOGIC====== ****//
-//============
-//IN THIS VERSION displayTodos WAS MODIFIED, Please check for the full final code at the bottom of this page
-//displayTodos should show .todoText
-var todoList = {
-	todos: [],
-	displayTodos: function() {
-		//IF sec
-		//=============
-		if (this.todos.length === 0) {
-			console.log('Your todo list is empty boss');
-		} else {
-			console.log('My Todos:');
-			//FOR loop SEC
-			//=============
-			for (var i = 0; i < this.todos.length; i++) {
-				//Checking if todos are completed
-				if (this.todos[i].completed === true) {
-					console.log('(x)', this.todos[i].todoText);
-				} else {
-					console.log('( )', this.todos[i].todoText);
-				}
-			}
-		}
+//Here goes the toggleAll button.
 
-		//Checking if todos are completed
-		if (this.todos[i].completed === true) {
-			console.log('(x)', this.todos[i].todoText);
-		} else {
-			console.log('( )', this.todos[i].todoText);
-		}
-	},
-
-	//toggleAll Method
-	//=================
-	toggleAll: function() {
-		var totalTodos = this.todos.length;
-		var completedTodos = 0;
-
-		//Get number of completed todos
-		for (var i = 0; i < totalTodos; i++) {
-			if (this.todos[i].completed === true) {
-				completedTodos++;
-			}
-		}
-
-		//Case 1: If everything's true, make everything false.
-		if (completedTodos === totalTodos) {
-			//make everything false
-			for (var i = 0; i < totalTodos; i++) {
-				this.todos[i].completed === false;
-			}
-		} else {
-			//Otherwise make everything true
-			for (var i = 0; i < totalTodos; i++) {
-				this.todos[i].completed === true;
-			}
-		}
-	}
-};
+//Here goes the addTodo button.
