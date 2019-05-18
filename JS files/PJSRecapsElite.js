@@ -116,5 +116,6 @@ var handlers = {
 	addTodo: function() {
 		var addTodoTextInput = document.getElementById('addTodoTextInput');
 		todoList.addTodo(addTodoTextInput.value);
+		addTodoTextInput.value = '';
 	}
 };
