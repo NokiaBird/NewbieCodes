@@ -1,4 +1,4 @@
-//HERE IS THE OBJECT RECAPS OF PJS
+//HERE IS PJS Lessons
 //================================
 var todoList = {
 	todos: [],
@@ -117,5 +117,14 @@ var handlers = {
 		var addTodoTextInput = document.getElementById('addTodoTextInput');
 		todoList.addTodo(addTodoTextInput.value);
 		addTodoTextInput.value = '';
+	},
+
+	//ChangeTodo button
+	changeTodo: function() {
+		var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
+		var changeTodoTextInput = document.getElementById('changeTodoTextInput');
+		todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+		changeTodoPositionInput.value = '';
+		changeTodoTextInput.value = '';
 	}
 };
